@@ -1,0 +1,64 @@
+<main role="main" id="MainContent">
+  <div class="section container">
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="card login-wrapper">
+          <div class="card-content">
+            <div id="CustomerLoginForm">
+                <form [formGroup]="authForm" (ngSubmit)="submitForm()" id="customer_login" accept-charset="UTF-8">
+                    <input type="hidden" name="form_type" value="customer_login">
+                    <input type="hidden" name="utf8" value="✓">
+                    <h4 class="center">{{ title }}</h4>
+                    <!-- <list-errors [errors]="errors"></list-errors> -->
+                    <fieldset [disabled]="isSubmitting" style="border: none;">
+                        <div class="input-field" *ngIf="authType == 'register'">
+                            <label for="UserName" class="">Usuario</label>
+                            <input formControlName="username" id="UserName" class="" type="text"  
+                                    spellcheck="false" autocomplete="off" autocapitalize="off" autofocus=""/>
+                        </div>
+                        <div class="input-field">
+                            <label for="UserEmail" class="">Email</label>
+                            <input formControlName="email" id="UserEmail" class="" type="email" spellcheck="false" autocomplete="off" autocapitalize="off" autofocus="" />
+                        </div>
+                        <div class="input-field">
+                            <label for="UserPassword">Contrase&ntilde;a</label>
+                            <input formControlName="password" id="UserPassword" class="" type="password" />
+                        </div>
+                        <input type="submit" class="btn-large z-depth-0" value="{{ title }}">
+
+                        <a href="https://agile-reaches-32584.herokuapp.com/account/login#recover" id="RecoverPassword">Olvid&oacute; su contrase&ntilde;a?</a>
+                    </fieldset>
+                </form>
+            </div>
+
+<!--            <div id="RecoverPasswordForm" class="hide">
+              <h4 class="center">Restaurar contrase&ntilde;a</h4>
+              <p>Compruebe su correo electr&oacute;nico para restaurar la contase&ntilde;a.</p>
+              <form method="post" action="https://agile-reaches-32584.herokuapp.com/account/recover" accept-charset="UTF-8">
+                <input type="hidden" name="form_type" value="recover_customer_password">
+                <input type="hidden" name="utf8" value="✓">
+                <div class="input-field">
+                  <label for="RecoverEmail">Email</label>
+                  <input type="email" name="email" id="RecoverEmail" spellcheck="false" autocomplete="off" autocapitalize="off">
+                  <input formControlName="email" id="RecoverEmail" class="" type="email" spellcheck="false" autocomplete="off" autocapitalize="off">
+                </div>
+
+                <input type="submit" class="btn-large z-depth-0" value="Enviar">
+                <a href="https://agile-reaches-32584.herokuapp.com/account/login#" id="HideRecoverPasswordLink">
+                  Cancelar
+                </a>
+              </form>
+
+            </div>
+ -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-success hide" id="ResetSuccess">
+        We've sent you an email with a link to update your password.
+  </div>
+</main>

@@ -1,0 +1,61 @@
+<div id="cat-section-header" class="cat-section">
+
+
+  <!-- Navbar and Header -->
+  <nav class="nav-extended">
+      <div class="nav-background">
+          <div class="pattern active"></div>
+      </div>
+
+      <div class="nav-wrapper container">
+          <a href="#!" itemprop="url" class="brand-logo site-logo">Catastro</a>
+
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+              <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="https://agile-reaches-32584.herokuapp.com/" class="site-nav__link">Inicio</a></li>
+              <li><a href="https://agile-reaches-32584.herokuapp.com/archive" class="site-nav__link">Archivo</a></li>
+              <li><a href="https://agile-reaches-32584.herokuapp.com/account/settings"><i class="material-icons">settings</i></a></li>
+              <li><a class="fullscreen-search" href="https://agile-reaches-32584.herokuapp.com/account/login#"><i class="material-icons">search</i></a></li>
+              <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Acceder</a></li>
+              <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
+          </ul>
+      </div>
+
+      <div class="nav-header center">
+          <!-- Show Carousel instead of default page titles -->
+          <h1>Usuario</h1>
+          <div class="tagline">Autentificaci&oacute;n</div>
+      </div>
+  </nav>
+  <ul class="side-nav" id="nav-mobile" style="transform: translateX(-100%);">
+      <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Log in</a></li>
+      <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
+      <li><a href="https://agile-reaches-32584.herokuapp.com/" class="site-nav__link">Inicio</a></li>
+      <li><a href="https://agile-reaches-32584.herokuapp.com/blogs/archive" class="site-nav__link">Archivo</a></li>
+      <li><a href="https://agile-reaches-32584.herokuapp.com/settings">Configuraci&oacute;n</a></li>
+      <li><a class="fullscreen-search" href="https://agile-reaches-32584.herokuapp.com/account/login#">Buscar</a></li>
+  </ul>
+
+  <div data-section-id="header" data-section-type="header-section">
+      <header role="banner">
+          <div class="popup-search-wrapper">
+              <form action="https://agile-reaches-32584.herokuapp.com/search" method="get" role="search">
+                  <label for="Search" class="label-hidden active">
+                      Buscar localicai&oacute;n
+                  </label>
+                  <input type="search" name="q" id="Search" value="" placeholder="Buscar dirrecci&oacute;">
+                  <button type="submit" class="btn-flat btn-floating waves-effect">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 20 20">
+                          <path fill="#444"
+                                d="M18.64 17.02l-5.31-5.31c.81-1.08 1.26-2.43 1.26-3.87C14.5 4.06 11.44 1 7.75 1S1 4.06 1 7.75s3.06 6.75 6.75 6.75c1.44 0 2.79-.45 3.87-1.26l5.31 5.31c.45.45 1.26.54 1.71.09.45-.36.45-1.17 0-1.62zM3.25 7.75c0-2.52 1.98-4.5 4.5-4.5s4.5 1.98 4.5 4.5-1.98 4.5-4.5 4.5-4.5-1.98-4.5-4.5z"></path>
+                      </svg>
+                      <span class="icon-fallback-text">Buscar</span>
+                  </button>
+              </form>
+              <i class="popup-close material-icons">close</i>
+          </div>
+      </header>
+  </div>
+</div>
