@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class JwtService {
 
-  constructor() { 
+  constructor() {
     console.log('Inside JwtService');
   }
 

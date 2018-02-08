@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -29,7 +30,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     AuthModule,
     HomeModule,
     rootRouting,
-    SharedModule
+    SharedModule,
+    LeafletModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true},

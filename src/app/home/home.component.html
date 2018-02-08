@@ -3,40 +3,62 @@
     <div class="banner">
       <div class="container">
         <h1 class="logo-font">Catastro</h1>
-        <p>A place to share your <i>Angular 2</i> knowledge.</p>
+          <form>
+              <div class="form-group row">
+              <label for="options" class="col-form-label">Options:</label>
+              <small id="options" class="form-text">{{ optionsSpec | json }}</small>
+            </div>
+
+            <!-- Zoom Levels -->
+            <div class="form-group row">
+              <div class="col-4">
+                <label class="col-form-label float-right">
+                  Zoom
+                </label>
+              </div>
+              <div class="col">
+                <select class="form-control" name="zoom" [(ngModel)]="model.zoom" required>
+                  <option *ngFor="let z of model.zoomLevels" [value]="z">{{z}}</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Lat/Long -->
+            <div class="form-group row">
+              <div class="col-4">
+                <label class="col-form-label float-right">
+                  Latitude
+                </label>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" name="latitude" [(ngModel)]="model.latitude" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-4">
+                <label class="col-form-label float-right">
+                  Longitude
+                </label>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" name="longitude" [(ngModel)]="model.longitude" required>
+              </div>
+            </div>
+
+            <button type="button"
+                class="btn btn-primary float-right"
+                (click)="onApply()">Apply</button>
+
+          </form>
       </div>
     </div>
   
     <div class="container page">
-      <div class="row">
-  
-        <div class="col-md-9">
-          <div class="feed-toggle">
-            <ul class="nav nav-pills outline-active">
-              <li class="nav-item">
-                <a class="nav-link">
-                   Your Feed
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">
-                   Global Feed
-                </a>
-              </li>
-            </ul>
-          </div>
-  
-  
-        </div>
-  
-        <div class="col-md-3">
-          <div class="sidebar">
-            <p>Popular Tags</p>
-  
-  
-          </div>
-        </div>
-  
-      </div>
+      
+      <div leaflet style="height: 300px;"
+					 [leafletOptions]="options"
+					 [leafletZoom]="zoom"
+					 [leafletCenter]="center">
+
     </div>
   </div>
