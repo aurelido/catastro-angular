@@ -1,4 +1,5 @@
-# CatastroAngular
+# catastro-angular
+Catastro front-end builded with Angular 5 and Materialize. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
