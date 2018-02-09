@@ -2,63 +2,67 @@
 
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">Catastro</h1>
-          <form>
-              <div class="form-group row">
-              <label for="options" class="col-form-label">Options:</label>
-              <small id="options" class="form-text">{{ optionsSpec | json }}</small>
-            </div>
-
-            <!-- Zoom Levels -->
-            <div class="form-group row">
-              <div class="col-4">
-                <label class="col-form-label float-right">
-                  Zoom
-                </label>
-              </div>
+          <div class="row">
               <div class="col">
-                <select class="form-control" name="zoom" [(ngModel)]="model.zoom" required>
-                  <option *ngFor="let z of model.zoomLevels" [value]="z">{{z}}</option>
-                </select>
+                <div class="card-title"><h1 class="logo-font">Localizador</h1></div>
+                <p>Estoy es una muestra del mapa de localización del catastro... 
+                    En las próximas versiones se incluirán numerosas funcionalidades como
+                    selección en mapa, búsqueda por provincia y municipio, listado de 
+                    localizaciones, datos del catastro público y mucho más...
+                  </p>
+                <div class="card">
+                  <div class="">
+                    <div leaflet style="height: 300px;"
+                      [leafletOptions]="options"
+                      [leafletZoom]="zoom"
+                      [leafletCenter]="center">
+                    </div>
+                  <div class="card-content">
+                    <form>
+                      <!-- Option Json -->
+                      <div class="form-group row">
+                        <label for="options" class="col-form-label">Options:</label>
+                        <small id="options" class="form-text">{{ optionsSpec | json }}</small>
+                      </div>
+                      <!-- Lat/Long -->
+                      <div class="form-group row">
+                        <div class="col-4">
+                          <label class="col-form-label float-right">
+                            Latitude
+                          </label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" name="latitude" [(ngModel)]="model.latitude" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-4">
+                          <label class="col-form-label float-right">
+                            Longitude
+                          </label>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" name="longitude" [(ngModel)]="model.longitude" required>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="card-action">
+                      <button type="button"
+                      class="btn btn-primary float-right"
+                      (click)="onApply()">Apply</button>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <!-- Lat/Long -->
-            <div class="form-group row">
-              <div class="col-4">
-                <label class="col-form-label float-right">
-                  Latitude
-                </label>
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" name="latitude" [(ngModel)]="model.latitude" required>
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-4">
-                <label class="col-form-label float-right">
-                  Longitude
-                </label>
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" name="longitude" [(ngModel)]="model.longitude" required>
-              </div>
-            </div>
-
-            <button type="button"
-                class="btn btn-primary float-right"
-                (click)="onApply()">Apply</button>
-
-          </form>
+        
+          
       </div>
     </div>
   
     <div class="container page">
       
-      <div leaflet style="height: 300px;"
-					 [leafletOptions]="options"
-					 [leafletZoom]="zoom"
-					 [leafletCenter]="center">
+      
 
     </div>
   </div>

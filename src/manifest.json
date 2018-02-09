@@ -1,0 +1,25 @@
+{
+  "name": "Catastro",
+  "short_name": "Catastro",
+  "icons": [{
+    "src": "images/icons/spain_green32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },{
+      "src": "images/icons/spain_green64x64.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },{
+    "src": "images/icons/spain_green128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },{
+      "src": "images/icons/spain_green256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/#",
+  "display": "standalone",
+  "background_color": "#5DAB4D",
+  "theme_color": "#5DAB4D"
+}

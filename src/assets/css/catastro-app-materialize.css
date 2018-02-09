@@ -6939,7 +6939,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: -moz-calc(100%);
   padding-bottom: 60px;
   background-color: #fff;
-  z-index: 999;
+  z-index: 9999;
   overflow-y: auto;
   will-change: transform;
   -webkit-backface-visibility: hidden;
