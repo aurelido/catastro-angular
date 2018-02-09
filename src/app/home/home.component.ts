@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
   } = {
     layers: [
       {
-        url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         maxZoom: 18,
         attribution: 'Open Street Map'
       }
