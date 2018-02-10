@@ -1,5 +1,5 @@
 {
-  "name": "Catastro",
+  "name": "Catastro WPA",
   "short_name": "Catastro",
   "icons": [{
     "src": "assets/images/icons/spain_green32x32.png",
@@ -9,16 +9,20 @@
       "src": "assets/images/icons/spain_green64x64.png",
         "sizes": "64x64",
         "type": "image/png"
-      },{
-    "src": "assets/images/icons/spain_green128x128.png",
+    },{
+      "src": "assets/images/icons/spain_green128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     },{
-      "src": "assets/images/icons/spain_green256x256.png",
-      "sizes": "256x256",
+      "src": "assets/images/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },{
+      "src": "assets/images/icons/android-chrome-384x384.png",
+      "sizes": "384x384",
       "type": "image/png"
     }],
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#5DAB4D",
   "theme_color": "#5DAB4D"

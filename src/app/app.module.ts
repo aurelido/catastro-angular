@@ -9,12 +9,14 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { ArchiveModule } from './archive/archive.module';
 import {
   SharedModule,
   FooterComponent,
   HeaderComponent,
   ApiService,
   UserService,
+  LocationService,
   JwtService,
   HttpTokenInterceptor
 } from './shared';
@@ -31,6 +33,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     BrowserModule,
     AuthModule,
     HomeModule,
+    ArchiveModule,
     rootRouting,
     SharedModule,
     LeafletModule,
@@ -40,6 +43,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true},
     ApiService,
     UserService,
+    LocationService,
     JwtService
   ],
   bootstrap: [AppComponent]

@@ -14,10 +14,10 @@
               <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-              <li><a href="https://agile-reaches-32584.herokuapp.com/" class="site-nav__link">Inicio</a></li>
-              <li><a href="https://agile-reaches-32584.herokuapp.com/archive" class="site-nav__link">Archivo</a></li>
-              <li><a href="https://agile-reaches-32584.herokuapp.com/account/settings"><i class="material-icons">settings</i></a></li>
-              <li><a class="fullscreen-search" href="https://agile-reaches-32584.herokuapp.com/account/login#"><i class="material-icons">search</i></a></li>
+              <li><a href="/#" class="site-nav__link">Inicio</a></li>
+              <li><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
+              <li><a href="/#"><i class="material-icons">settings</i></a></li>
+              <li><a routerLink="/search" class="fullscreen-search"><i class="material-icons">search</i></a></li>
               <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Acceder</a></li>
               <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
           </ul>
@@ -32,16 +32,16 @@
   <ul class="side-nav" id="nav-mobile" style="transform: translateX(-100%);">
       <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Log in</a></li>
       <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
-      <li><a href="https://agile-reaches-32584.herokuapp.com/" class="site-nav__link">Inicio</a></li>
-      <li><a href="https://agile-reaches-32584.herokuapp.com/blogs/archive" class="site-nav__link">Archivo</a></li>
-      <li><a href="https://agile-reaches-32584.herokuapp.com/settings">Configuraci&oacute;n</a></li>
-      <li><a class="fullscreen-search" href="https://agile-reaches-32584.herokuapp.com/account/login#">Buscar</a></li>
+      <li><a href="/#" class="site-nav__link">Inicio</a></li>
+      <li><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
+      <li><a href="/#">Configuraci&oacute;n</a></li>
+      <li><a class="fullscreen-search" href="/account/login#">Buscar</a></li>
   </ul>
 
   <div data-section-id="header" data-section-type="header-section">
       <header role="banner">
           <div class="popup-search-wrapper">
-              <form action="https://agile-reaches-32584.herokuapp.com/search" method="get" role="search">
+              <form action="/search" method="get" role="search">
                   <label for="Search" class="label-hidden active">
                       Buscar localicai&oacute;n
                   </label>
