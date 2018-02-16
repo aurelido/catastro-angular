@@ -36,7 +36,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     ArchiveModule,
     rootRouting,
     SharedModule,
-    LeafletModule,
+    LeafletModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [

@@ -19,15 +19,24 @@ constructor(
 condition: boolean;
 
 ngOnInit() {
+    // Render before login
+    this.show(false);
+
     this.userService.isAuthenticated.subscribe(
-    (isAuthenticated) => {
-        if (isAuthenticated && this.condition || !isAuthenticated && !this.condition) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-        } else {
-        this.viewContainer.clear();
+        (isAuthenticated) => {
+            this.show(isAuthenticated);
         }
-    }
     );
+}
+
+private show(isAuthenticated: boolean) {
+    if (isAuthenticated && this.condition || !isAuthenticated && !this.condition) {
+        console.log('==> isAuthenticated: %s, %s', isAuthenticated, this.condition);
+        this.viewContainer.createEmbeddedView(this.templateRef);
+    } else {
+        console.log('==> notAuthenticated: %s, %s', isAuthenticated, this.condition);
+        this.viewContainer.clear();
+    }
 }
 
 @Input() set showAuthed(condition: boolean) {

@@ -8,18 +8,18 @@
       </div>
 
       <div class="nav-wrapper container">
-          <a href="#!" itemprop="url" class="brand-logo site-logo">Logo y Branch</a>
+          <a href="http://aragonesbanegas.com/slidefolio/" itemprop="url" class="brand-logo site-logo">By Aurelio Aragones</a>
 
           <a href="#" data-activates="nav-mobile" class="button-collapse">
               <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
               <li><a href="/#" class="site-nav__link">Inicio</a></li>
-              <li><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
+              <li *showAuthed="true"><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
               <li><a href="/#"><i class="material-icons">settings</i></a></li>
               <li><a routerLink="/search" class="fullscreen-search"><i class="material-icons">search</i></a></li>
-              <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Acceder</a></li>
-              <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
+              <li *showAuthed="false"><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Acceder</a></li>
+              <li *showAuthed="false"><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
           </ul>
       </div>
 
@@ -30,12 +30,12 @@
       </div>
   </nav>
   <ul class="side-nav" id="nav-mobile" style="transform: translateX(-100%);">
-      <li><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Log in</a></li>
-      <li><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
+      <li *showAuthed="false"><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Log in</a></li>
+      <li *showAuthed="false"><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
       <li><a href="/#" class="site-nav__link">Inicio</a></li>
-      <li><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
+      <li *showAuthed="true"><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
       <li><a href="/#">Configuraci&oacute;n</a></li>
-      <li><a class="fullscreen-search" href="/account/login#">Buscar</a></li>
+      <li><a class="fullscreen-search" href="/search#">Buscar</a></li>
   </ul>
 
   <div data-section-id="header" data-section-type="header-section">

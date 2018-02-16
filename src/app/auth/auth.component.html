@@ -11,7 +11,7 @@
                     <h4 class="center">{{ title }}</h4>
                     <!-- <list-errors [errors]="errors"></list-errors> -->
                     <fieldset [disabled]="isSubmitting" style="border: none;">
-                        <div class="input-field" *ngIf="authType == 'register'">
+                        <div class="input-field" *ngIf="authType=='register'">
                             <label for="UserName" class="">Usuario</label>
                             <input formControlName="username" id="UserName" class="" type="text"  
                                     spellcheck="false" autocomplete="off" autocapitalize="off" autofocus=""/>
@@ -20,13 +20,19 @@
                             <label for="UserEmail" class="">Email</label>
                             <input formControlName="email" id="UserEmail" class="" type="email" spellcheck="false" autocomplete="off" autocapitalize="off" autofocus="" />
                         </div>
-                        <div class="input-field">
+                        <div class="input-field" *ngIf="authType!='recover'">
                             <label for="UserPassword">Contrase&ntilde;a</label>
                             <input formControlName="password" id="UserPassword" class="" type="password" />
                         </div>
-                        <input type="submit" class="btn-large z-depth-0" value="{{ title }}">
 
-                        <a href="https://agile-reaches-32584.herokuapp.com/account/login#recover" id="RecoverPassword">Olvid&oacute; su contrase&ntilde;a?</a>
+                        <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
+
+                        <div class="row">
+                          <input type="submit" class="btn-large" value="{{ title }}"/>
+                          <input *ngIf="authType=='recover'" type="button" class="btn-large" [routerLink]="['/login']" id="HideRecoverPasswordLink" value="Cancelar"/>
+                        </div>
+
+                        <a [routerLink]="['/recover']" *ngIf="authType=='login'">Olvid&oacute; su contrase&ntilde;a?</a>
                     </fieldset>
                 </form>
             </div>
