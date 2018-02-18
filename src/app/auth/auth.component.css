@@ -1,0 +1,9 @@
+a.panel-footer {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.panel a.panel-footer>span {
+    color: #79589f;
+    text-decoration: underline;
+}
