@@ -1,6 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared';
+import { NoAuthGuard } from '../shared/services/no-auth-guard.service';
 
 import { AuthComponent } from './auth.component';
 
@@ -8,15 +9,18 @@ import { AuthComponent } from './auth.component';
 const authRouting: ModuleWithProviders = RouterModule.forChild([
   {
     path: 'login',
-    component: AuthComponent
+    component: AuthComponent,
+    canActivate: [NoAuthGuard]
   },
   {
     path: 'register',
-    component: AuthComponent
+    component: AuthComponent,
+    canActivate: [NoAuthGuard]
   },
   {
     path: 'recover',
-    component: AuthComponent
+    component: AuthComponent,
+    canActivate: [NoAuthGuard]
   }
 ]);
 

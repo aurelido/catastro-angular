@@ -13,7 +13,7 @@
                     <fieldset [disabled]="isSubmitting" style="border: none;">
                         <div class="input-field" *ngIf="authType=='register'">
                             <label for="UserName" class="">Usuario</label>
-                            <input formControlName="username" id="UserName" class="" type="text"  
+                            <input formControlName="username" id="UserName" class="" type="text"
                                     spellcheck="false" autocomplete="off" autocapitalize="off" autofocus=""/>
                         </div>
                         <div class="input-field">
@@ -67,4 +67,5 @@
   <div class="form-success hide" id="ResetSuccess">
         We've sent you an email with a link to update your password.
   </div>
+  <app-list-errors [errors]="errors"></app-list-errors>
 </main>

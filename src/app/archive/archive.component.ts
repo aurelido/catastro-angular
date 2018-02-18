@@ -22,12 +22,14 @@ export class ArchiveComponent implements OnInit {
 
   ngOnInit() {
     this.getLocations();
-    console.log('ngOnInit ArchiveComponent' + this.locations[0]);
   }
 
   getLocations(): void {
-    this.locationService.getLocations()
-      .subscribe(locations => this.locations = locations);
+    this.locationService.getAll()
+      .subscribe(locations => {
+        console.log('Locations in archive component... %j', locations);
+        this.locations = locations;
+      });
   }
 
 }

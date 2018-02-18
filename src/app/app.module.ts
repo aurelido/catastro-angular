@@ -15,6 +15,8 @@ import {
   FooterComponent,
   HeaderComponent,
   ApiService,
+  AuthGuard,
+  NoAuthGuard,
   UserService,
   LocationService,
   JwtService,
@@ -32,8 +34,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   imports: [
     BrowserModule,
     AuthModule,
-    HomeModule,
     ArchiveModule,
+    HomeModule,
     rootRouting,
     SharedModule,
     LeafletModule.forRoot(),
@@ -42,9 +44,11 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true},
     ApiService,
-    UserService,
+    AuthGuard,
+    JwtService,
     LocationService,
-    JwtService
+    NoAuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
