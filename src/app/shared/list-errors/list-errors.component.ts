@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Errors } from '../models';
+import { toast } from 'materialize-css';
 
 @Component({
   selector: 'app-list-errors',
@@ -11,16 +12,19 @@ export class ListErrorsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   @Input()
   set errors(errorList: Errors) {
-    console.log('==> Errors: %j', errorList);
-    this.formattedErrors = Object.keys(errorList.errors || {})
-      .map(key => `${key} ${errorList.errors[key]}`);
+    if (errorList.error && errorList.error.errors) {
+      this.formattedErrors = Object.keys(errorList.error.errors || {})
+      .map(key => `${key} ${errorList.error.errors[key]}`);
+      toast(this.formattedErrors, 3000, 'rounded green');
+    }
   }
 
-  get errorList() { return this.formattedErrors; }
+  get errorList() {
+    return this.formattedErrors;
+  }
 
 }

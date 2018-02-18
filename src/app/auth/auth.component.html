@@ -25,14 +25,14 @@
                             <input formControlName="password" id="UserPassword" class="" type="password" />
                         </div>
 
-                        <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
+                        <app-list-errors [errors]="errors"></app-list-errors>
 
                         <div class="row">
                           <input type="submit" class="btn-large" value="{{ title }}"/>
                           <input *ngIf="authType=='recover'" type="button" class="btn-large" [routerLink]="['/login']" id="HideRecoverPasswordLink" value="Cancelar"/>
                         </div>
 
-                        <a [routerLink]="['/recover']" *ngIf="authType=='login'">Olvid&oacute; su contrase&ntilde;a?</a>
+                        <a class="panel-footer" [routerLink]="['/recover']" *ngIf="authType=='login'">Olvid&oacute; su contrase&ntilde;a?</a>
                     </fieldset>
                 </form>
             </div>

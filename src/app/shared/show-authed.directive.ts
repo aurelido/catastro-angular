@@ -19,9 +19,6 @@ constructor(
 condition: boolean;
 
 ngOnInit() {
-    // Render before login
-    this.show(false);
-
     this.userService.isAuthenticated.subscribe(
         (isAuthenticated) => {
             this.show(isAuthenticated);
@@ -31,10 +28,8 @@ ngOnInit() {
 
 private show(isAuthenticated: boolean) {
     if (isAuthenticated && this.condition || !isAuthenticated && !this.condition) {
-        console.log('==> isAuthenticated: %s, %s', isAuthenticated, this.condition);
         this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
-        console.log('==> notAuthenticated: %s, %s', isAuthenticated, this.condition);
         this.viewContainer.clear();
     }
 }

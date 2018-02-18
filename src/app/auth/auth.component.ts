@@ -10,7 +10,7 @@ import { Errors, UserService } from '../shared';
 export class AuthComponent implements OnInit {
   authType: String = '';
   title: String = '';
-  errors: Errors = {errors: {}};
+  errors: Errors = {error: {}};
   isSubmitting = false;
   authForm: FormGroup;
 
@@ -46,17 +46,17 @@ export class AuthComponent implements OnInit {
 
   submitForm() {
     this.isSubmitting = true;
-    this.errors = {errors: {}};
+    this.errors = {error: {}};
 
     const credentials = this.authForm.value;
     this.userService
-    .attemptAuth(this.authType, credentials)
-    .subscribe(
-      data => this.router.navigateByUrl('/'),
-      err => {
-        this.errors = err;
-        this.isSubmitting = false;
-      }
-    );
+            .attemptAuth(this.authType, credentials)
+            .subscribe(
+              data => this.router.navigateByUrl('/'),
+              err => {
+                this.errors = err;
+                this.isSubmitting = false;
+              }
+            );
   }
 }

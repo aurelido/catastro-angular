@@ -16,11 +16,11 @@ export class LocationService {
     { id: 1, pc1: '9352501', pc2: 'VJ1195S', coord: {xcen: 413555.56, ycen: 4514686.36, srs: 'EPSG:25830'},
     address: 'CL CINCO JOTAS 555 SAN BENITO (BADAJOZ)'},
     { id: 1, pc1: '9352503', pc2: 'VJ1195S', coord: {xcen: 419558.84, ycen: 4314834.55, srs: 'EPSG:25830'},
-    address: 'CL PATIO DE LAS FLORES 7 PEDROCHES(CORDOBA)'},
+    address: 'CL PATIO DE LAS FLORES 7 PEDROCHES (CORDOBA)'},
     { id: 1, pc1: '9352505', pc2: 'VJ1195S', coord: {xcen: 464533.43, ycen: 4314232.93, srs: 'EPSG:25830'},
     address: 'AV DEL VINO 254 LOGROÑO (RIOJA)'}];
 
-  constructor() { 
+  constructor() {
     console.log('Inside LocationService');
   }
 
