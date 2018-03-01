@@ -8,5 +8,5 @@
 # Must keep Windows line ending to be parsed correctly
 scripts/windows/packages.txt eol=crlf
 
-ignore all static folders from assets
+# Ignore all static folders from assets
 src/assets/* linguist-vendored
