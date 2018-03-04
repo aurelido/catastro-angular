@@ -5,6 +5,9 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:3000/api'
+  images_server: 'http://localhost:3000/',
+  api_url: 'http://localhost:3000/api',
+  googleMapsKey: 'AIzaSyCG2KrxHmHXgRi6vsJMe7WOq6QiZCvdglM',
+  srs: 'SRS'
 };
 

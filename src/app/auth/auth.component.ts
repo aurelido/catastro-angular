@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Errors, UserService } from '../shared';
+import { LocationService } from '../shared/services/location.service';
 
 @Component({
   selector: 'auth-page',
   templateUrl: './auth.component.html'
 })
 export class AuthComponent implements OnInit {
-  authType: String = '';
-  title: String = '';
+  authType = '';
+  title = '';
   errors: Errors = {error: {}};
   isSubmitting = false;
   authForm: FormGroup;
@@ -18,6 +19,7 @@ export class AuthComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
+    private locate: LocationService,
     private fb: FormBuilder
   ) {
     // use FormBuilder to create a form group

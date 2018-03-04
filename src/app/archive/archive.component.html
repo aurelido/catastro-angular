@@ -1,37 +1,44 @@
 <div class="archive-page">
       <div class="container">
-
-          <div class="row">
-              <div class="col s12 m6 l4" *ngFor="let location of locations">
-                <h4 class="light"><span class="card-title activator grey-text text-darken-4">{{location.properties.location}}
-                  </span></h4>
-                <div class="card">
-
-                  <div class="card-image">
-                    <div style="padding-top:10px;padding-right:10px"><a class="btn-floating waves-effect waves-light activator right red"><i class="material-icons">add</i></a></div>
-                    <img src="https://www1.sedecatastro.gob.es/Cartografia/GeneraGraficoParcela.aspx?del=13&mun=900&RefCat={{location.properties.rc}}&AnchoPixels=300&AltoPixels=300">
-                  </div>
-                      
-                  <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                      <p>Aqui se muestra mas información relacionada con el catastro.</p>
-                      <div class="form-group">
-                        <label for="rcInput">REFERENCIA CATASTRAL (RC) DEL INMUEBLE</label>
-                        <input type="text" class="form-control" id="rcInput" aria-describedby="rcHelp" value="{{location.properties.rc}}">
-                        <small id="rcHelp" class="form-text text-muted">Identificador oficial y obligatorio de los bienes inmuebles.</small>
-                      </div>
-                  </div>
-
-                  <div class="card-action">
-                    <div class="row">
-                        <div class="blue-text text-darken-2 left s6">18 min</div>
-                        <div class="s6 right">
-                          <a href="#"><i class="material-icons">near_me</i>(21 km)</a>
-                        </div>
-                        
-                    </div>
-                  </div>
+        
+        <div class="preloader-background image" *ngIf="loading">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
               </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div [hidden]="loading || (results && results.length)">
+          <h4>No hay datos guardados</h4>
+          <p class="flow-text">
+              Prueba seleccionando una localización desde el mapa o el formulario de consulta.
+          </p>
+        </div>
+        
+        <nav [hidden]="loading || totalPages.length <= 1">
+          <ul>
+            <li class="page-item"
+              [ngClass]="{'active': pageNumber === currentPage}"
+              *ngFor="let pageNumber of totalPages"
+              (click)="setPageTo(pageNumber)">
+        
+              <a class="page-link" >{{ pageNumber }}</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="row">
+            <div class="col s12 m6 l4" *ngFor="let location of results">
+                <location-component [location]="location.properties"></location-component>
           </div>
         </div>
     </div>
