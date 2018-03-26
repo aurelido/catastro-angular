@@ -3,6 +3,8 @@ Catastro front-end builded with Angular 5 and Materialize.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
+## Configuration
+As an Angular CLI project the `src/environment folder includes the configuration files for development and production, uses this files to define the url to the API or the Google Maps API key.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
