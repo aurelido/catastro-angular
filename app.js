@@ -24,9 +24,9 @@ if (!isProduction) {
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-var err = new Error('Not Found');
-err.status = 404;
-next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 /// error handlers
@@ -58,5 +58,5 @@ res.json({'errors': {
 
 // Start the app by listening on the default Heroku port
 var server = app.listen( process.env.PORT || 8080, function(){
-console.log('Listening on port ' + server.address().port);
+    console.log('Listening on port ' + server.address().port);
 });

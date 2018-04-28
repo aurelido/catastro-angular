@@ -13,6 +13,7 @@
           </a>
           <ul class="right hide-on-med-and-down">
               <li><a href="/#" class="site-nav__link">Inicio</a></li>
+              <li *showAuthed="true"><a routerLink="/map" routerLinkActive="active" id="archive_link">Mapa</a></li>
               <li *showAuthed="true"><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
               <li><a href="/#"><i class="material-icons">settings</i></a></li>
               <li><a routerLink="/search" class="fullscreen-search"><i class="material-icons">search</i></a></li>
@@ -32,6 +33,7 @@
       <li *showAuthed="false"><a routerLink="/login" routerLinkActive="active" id="customer_login_link">Log in</a></li>
       <li *showAuthed="false"><a routerLink="/register" routerLinkActive="active" id="customer_register_link">Crear cuenta</a></li>
       <li><a href="/#" class="site-nav__link">Inicio</a></li>
+      <li *showAuthed="true"><a routerLink="/map" routerLinkActive="active" id="archive_link">Mapa</a></li>
       <li *showAuthed="true"><a routerLink="/archive" routerLinkActive="active" id="archive_link">Archivo</a></li>
       <li><a href="/#">Configuraci&oacute;n</a></li>
       <li><a class="fullscreen-search" href="/search#">Buscar</a></li>

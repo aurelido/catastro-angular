@@ -5,4 +5,6 @@ export * from './services';
 export * from './shared.module';
 export * from './show-authed.directive';
 export * from './interceptors';
+export * from './location/location.component';
+export * from './image-loader/image-loader.component';
 

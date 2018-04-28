@@ -1,0 +1,31 @@
+<h4 class="dark truncate">
+  <span class="card-title activator grey-text text-darken-4">
+      {{location.location}}
+  </span>
+</h4>
+<div class="card hoverable">
+
+<div class="card-image">
+  <div style="padding-top:10px;padding-right:10px"><a class="btn-floating waves-effect waves-light activator right red"><i class="material-icons">add</i></a></div>
+  <image-loader [loading]="isLoading" [image]="image"></image-loader>
+</div>
+    
+<div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Info<i class="material-icons right">close</i></span>
+    <p>Aqui se muestra mas información relacionada con el catastro.</p>
+    <div class="form-group">
+      <label for="rcInput">REFERENCIA CATASTRAL (RC) DEL INMUEBLE</label>
+      <input type="text" class="form-control" id="rcInput" aria-describedby="rcHelp" value="{{location.rc}}">
+      <small id="rcHelp" class="form-text text-muted">Identificador oficial y obligatorio de los bienes inmuebles.</small>
+    </div>
+</div>
+
+<div class="card-action">
+  <div class="row">
+      <div class="blue-text text-darken-2 left s6">18 min</div>
+      <div class="s6 right">
+        <a href="#"><i class="material-icons">near_me</i>(21 km)</a>
+      </div>
+  </div>
+</div>
+</div>

@@ -9,7 +9,7 @@ import { User } from '../models';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit{
       (userData) => {
         this.currentUser = userData;
       }
-    )
+    );
   }
 
   logout() {
